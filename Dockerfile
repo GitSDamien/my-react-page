@@ -1,38 +1,35 @@
-# Définir l'image de base
-FROM node:lts-alpine
+# Définir l'image de base, identique à la CI de GitHub Actions
+# FROM node:lts-alpine
+FROM node:16.0.0-alpine
 
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# # Copier les fichiers de l'application
-# COPY . .
+# Copier les fichiers de l'application
+COPY . .
 
-# # Installer les dépendances
-# RUN npm install
+# Installer les dépendances
+RUN npm install
 
-# # Exécuter le serveur de développement
-# CMD [ "npm", "run", "serve" ]
-
-# Exposer le port 8080
+# Exposer le port 3000
 EXPOSE 3000
 
-CMD ["sh"]
+# Exécuter le serveur de développement
+CMD [ "npm", "start" ]
 
-# docker build -t reactjs-docker .
-# docker run -it -p 3000:3000 --rm -v "/$PWD":/app --name my-react-page reactjs-docker
-# cd my-app/
+# docker run -it -p 3000:3000 --rm -v "/$PWD":/app node:16.0.0-alpine sh
+# cd /app
+# npx create-react-app my-app
+# cd /app/my-app
+# npm install
+# npm test
+# npm run build
 # npm start
 # http://localhost:3000
+# exit
 
-# npx create-react-app my-app
-#
-# npx @vue/cli create my_map
-# cd my_map
-# npm install
-# npm run serve
-# http://localhost:8080
+# docker build -t my-react-app .
+# docker run -d --rm -p 3000:3000 --name my-react-app my-react-app
+# http://localhost:3000
+# docker stop my-react-app
 
-
-
-
-# docker run -it -p 8080:8080 --rm --name dockerize-vuejs vuejs-docker
