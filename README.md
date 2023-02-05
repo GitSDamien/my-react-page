@@ -77,3 +77,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 https://github.com/GitSDamien/my-react-page
+https://create-react-app.dev/docs/getting-started/
+https://github.com/EliEladElrom/cra-template-must-have-libraries
