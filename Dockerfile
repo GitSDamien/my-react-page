@@ -1,6 +1,6 @@
 # Définir l'image de base, identique à la CI de GitHub Actions
 # FROM node:lts-alpine
-FROM node:16.0.0-alpine
+FROM node:19.4.0-alpine
 
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
@@ -17,7 +17,7 @@ EXPOSE 3000
 # Exécuter le serveur de développement
 CMD [ "npm", "start" ]
 
-# docker run -it -p 3000:3000 --rm -v "/$PWD":/app node:16.0.0-alpine sh
+# docker run -it -p 3000:3000 --rm -v "/$PWD":/app node:19.4.0-alpine sh
 # cd /app
 # npx create-react-app my-app
 # cd /app/my-app
